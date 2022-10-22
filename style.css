@@ -42,6 +42,36 @@ body {
   height: 100%;
 }
 
+h1 {
+  font-size: var(--fs-large);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-large);
+}
+
+h2 {
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-medium);
+}
+
+h3 {
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-semi-bold);
+  line-height: var(--lh-regular);
+}
+
+h4 {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-small);
+}
+
+h5 {
+  font-size: var(--fs-extra-small);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-extra-small);
+}
+
 button,
 input,
 textarea {
