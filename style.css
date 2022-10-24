@@ -28,6 +28,10 @@
   --fw-bold: 700;
   --fw-semi-bold: 600;
   --fw-regular: 400;
+
+  /* Size */
+  --br-round: 50%;
+  --br-round-square: 10px;
 }
 
 /* Reset */
@@ -85,6 +89,7 @@ button {
   margin: 0;
   padding: 0;
   border: 0;
+  cursor: pointer;
 }
 
 button:focus,
@@ -120,6 +125,7 @@ li {
   height: 45px;
   font-size: var(--fs-regular);
   font-weight: var(--fw-semi-bold);
+  background-color: #ced8eb;
 }
 
 .header__logo {
@@ -154,14 +160,14 @@ li {
 }
 
 .header__li__a:hover {
-  color: var(--color-primary);
+  color: var(--color-light-black);
 }
 
 .header__li__a::after {
   content: '';
   width: 0;
   height: 3px;
-  background-color: var(--color-primary);
+  background-color: var(--color-light-black);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -175,4 +181,45 @@ li {
 .fa-solid.fa-circle-half-stroke {
   padding: 14px;
   cursor: pointer;
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  background: url(/images/background.png) center center no-repeat;
+  background-size: cover;
+}
+
+.home__avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: var(--br-round);
+}
+
+.home__title {
+  margin-top: 50px;
+}
+
+.home__description {
+  margin-top: 25px;
+}
+
+.home__button {
+  padding: 12px 15px;
+  margin-top: 50px;
+  border: 1.5px solid var(--color-black);
+  border-radius: var(--br-round-square);
+  background-color: inherit;
+  transition: all 250ms ease-in;
+}
+
+.home__button:hover {
+  color: var(--color-light-white);
+  border: 1px solid var(--color-light-black);
+  background-color: var(--color-light-black);
 }
