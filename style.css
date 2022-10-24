@@ -60,13 +60,14 @@ h3 {
   line-height: var(--lh-regular);
 }
 
-h4 {
+h4,
+h5 {
   font-size: var(--fs-small);
   font-weight: var(--fw-regular);
   line-height: var(--lh-small);
 }
 
-h5 {
+p {
   font-size: var(--fs-extra-small);
   font-weight: var(--fw-regular);
   line-height: var(--lh-extra-small);
@@ -108,4 +109,70 @@ li {
   padding-left: 0;
   margin-left: 0;
   list-style: none;
+}
+
+/* Navbar */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 45px;
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-semi-bold);
+}
+
+.header__logo {
+  display: block;
+  height: 100%;
+}
+
+.header__logo img {
+  padding: 2px 5px;
+  width: 70px;
+  height: 100%;
+}
+
+.header__navbar {
+  height: 100%;
+}
+
+.header__ul {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.header__li {
+  display: flex;
+  align-items: center;
+}
+
+.header__li__a {
+  position: relative;
+  padding: 10px 14px;
+}
+
+.header__li__a:hover {
+  color: var(--color-primary);
+}
+
+.header__li__a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background-color: var(--color-primary);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 500ms ease;
+}
+
+.header__li__a:hover::after {
+  width: 100%;
+}
+
+.fa-solid.fa-circle-half-stroke {
+  padding: 14px;
+  cursor: pointer;
 }
