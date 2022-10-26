@@ -9,9 +9,10 @@
   --color-light-white: #e3e3e3;
   --color-black: #000000;
   --color-light-black: #484848;
-  --color-grey: #a9a9a9;
-  --color-dark-grey: #909090;
-  --color-light-grey: #cfcfcf;
+  --color-gray: #a9a9a9;
+  --color-dark-gray: #909090;
+  --color-light-gray: #cfcfcf;
+  --color-princeton-orange: #ff8f00;
 
   /* Font Size */
   --fs-large: 48px;
@@ -124,6 +125,17 @@ li {
   list-style: none;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Navbar */
 .header {
   display: flex;
@@ -232,7 +244,6 @@ li {
 .section {
   padding: 50px;
   margin: auto;
-  max-width: 1260px;
   text-align: center;
 }
 
@@ -274,13 +285,13 @@ li {
 
 .major__title {
   margin-top: 15px;
-  color: var(--color-dark-grey);
+  color: var(--color-dark-gray);
 }
 
 .major__description {
   margin-top: 10px;
   font-size: var(--fs-small);
-  color: var(--color-dark-grey);
+  color: var(--color-dark-gray);
 }
 
 .about__education {
@@ -320,7 +331,90 @@ li {
 }
 
 /* Skills Section */
-.skills {
+.skills__section {
   background-color: #cac2d1;
-  max-width: none;
+}
+
+.skills {
+  margin: auto;
+  max-width: 1260px;
+}
+
+.skillset {
+  display: flex;
+  margin: 30px 0;
+  color: var(--color-light-white);
+  background-color: #9992a0;
+}
+
+.skillset__left {
+  flex-basis: 60%;
+  padding: 20px 40px;
+  background-color: var(--color-dark-gray);
+}
+
+.skillset__right {
+  flex-basis: 40%;
+}
+
+.tools {
+  padding: 20px;
+  height: 45%;
+}
+
+.etc {
+  padding: 20px;
+  height: 55%;
+  background-color: var(--color-gray);
+}
+
+.skillset__title {
+  color: var(--color-white);
+}
+
+.skill__ul,
+.tools__ul,
+.etc__ul {
+  margin-top: 15px;
+}
+
+.skill__li {
+  margin-top: 15px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__total {
+  margin-top: 10px;
+  width: 100%;
+  height: 5px;
+  background-color: var(--color-gray);
+}
+
+.skill__value {
+  height: 5px;
+  background-color: var(--color-princeton-orange);
+}
+
+.html {
+  width: 99%;
+}
+
+.css {
+  width: 95%;
+}
+
+.js {
+  width: 85%;
+}
+
+.vue {
+  width: 40%;
+}
+
+.node {
+  width: 55%;
 }
