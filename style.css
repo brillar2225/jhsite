@@ -282,3 +282,45 @@ li {
   font-size: var(--fs-small);
   color: var(--color-dark-grey);
 }
+
+.about__education {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.educations {
+  margin: auto;
+}
+
+.education {
+  display: flex;
+  align-items: center;
+}
+
+.education__icon {
+  margin-right: 20px;
+  width: 130px;
+  height: 95px;
+}
+
+.education__details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.education__title {
+  font-size: 21px;
+}
+
+.education__description {
+  margin-top: 8px;
+  font-size: var(--fs-small);
+}
+
+/* Skills Section */
+.skills {
+  background-color: #cac2d1;
+  max-width: none;
+}
