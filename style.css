@@ -98,6 +98,7 @@ button {
   margin: 0;
   padding: 0;
   border: 0;
+  background-color: inherit;
   cursor: pointer;
 }
 
@@ -417,4 +418,118 @@ li {
 
 .node {
   width: 55%;
+}
+
+/* Work Section */
+.work__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work__categories {
+  display: flex;
+  margin: 40px 0;
+  max-width: 500px;
+  width: 100%;
+}
+
+.category__btn {
+  padding: 10px 14px;
+  border: 1px solid var(--color-dark-white);
+  border-radius: var(--br-round-square);
+  font-size: var(--fs-regular);
+  text-align: center;
+  transition: all var(--ad-normal) ease-in-out;
+}
+
+.category__btn:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.category__btn:hover .category__count {
+  background-color: var(--color-dark-primary);
+}
+
+.all {
+  flex: 30%;
+  margin-right: 10px;
+}
+
+.front-end {
+  flex: 35%;
+  margin-right: 10px;
+}
+
+.back-end {
+  flex: 35%;
+}
+
+.category__count {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+  width: 24px;
+  height: 24px;
+  font-size: var(--fs-small);
+  color: var(--color-white);
+  border-radius: var(--br-round);
+  background-color: var(--color-light-primary);
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  position: relative;
+  margin: 2px;
+  width: 300px;
+  height: 180px;
+  border-radius: var(--br-round-square);
+  background-color: var(--color-light-white);
+}
+
+.project:hover .project__description {
+  transform: translateY(0px);
+  opacity: 0.7;
+}
+
+.project__img {
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+}
+
+.project__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--br-round-square);
+  background-color: #000000;
+  color: #ffffff;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all var(--ad-short) ease-in-out;
+}
+
+.project__description h3::after {
+  content: '';
+  display: block;
+  position: relative;
+  left: 50%;
+  margin-top: 8px;
+  margin-left: -20px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-dark-white);
 }
