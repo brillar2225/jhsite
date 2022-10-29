@@ -581,3 +581,49 @@ li {
 .testimonial__speech-bubble a {
   color: var(--color-primary);
 }
+
+/* Contact Section */
+.contact__section {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.contact__title {
+  margin: 40px 0;
+}
+
+.contact__email {
+  font-size: 25px;
+}
+
+.contact__social {
+  margin-top: 15px;
+  font-size: 30px;
+}
+
+.contact__social a:first-child {
+  margin-right: 10px;
+}
+
+.contact__social i {
+  transition: all var(--ad-short) ease;
+}
+
+.contact__social i:hover {
+  transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+footer h4,
+footer h5 {
+  font-size: var(--fs-regular);
+}
