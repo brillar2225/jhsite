@@ -65,60 +65,65 @@
 
     <!-- About Section -->
     <section id="about" class="section">
-      <h1>About Me</h1>
-      <p class="paragraph">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-        nesciunt assumenda nemo itaque! Molestias nisi debitis ea sunt minima
-        itaque saepe illo, ducimus, quam, laboriosam unde optio nesciunt esse
-        reprehenderit?
-      </p>
-      <div class="about__majors">
-        <div class="major">
-          <div class="major__icon">
-            <i class="fa-brands fa-html5"></i>
-          </div>
-          <h2 class="major__title">Front-end</h2>
-          <p class="major__description">
-            HTML&#44; CSS&#44; JavaScript&#44; Vue&#44; Web APIs
-          </p>
-        </div>
-        <div class="major">
-          <div class="major__icon">
-            <i class="fa-solid fa-server"></i>
-          </div>
-          <h2 class="major__title">Back-end</h2>
-          <p class="major__description">
-            JavaScript&#44; Node.js&#44; MongoDB&#44; Mongoose
-          </p>
-        </div>
-      </div>
-      <div class="about__education">
-        <div class="educations">
-          <div class="education">
-            <img
-              class="education__icon"
-              src="/images/educations/대구영남고등학교교표.png"
-              alt="Daegu Yeongnam High School Mark"
-            />
-            <div class="education__details">
-              <h3 class="education__title">
-                Yeongnam High School&#44; Republic of Korea
-              </h3>
-              <p class="education__description">
-                March 2014 &#45; February 2017
-              </p>
+      <div class="sr-only">About Me Section</div>
+      <div class="container">
+        <h1>About Me</h1>
+        <p class="paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          nesciunt assumenda nemo itaque! Molestias nisi debitis ea sunt minima
+          itaque saepe illo, ducimus, quam, laboriosam unde optio nesciunt esse
+          reprehenderit?
+        </p>
+        <div class="about__majors">
+          <div class="major">
+            <div class="major__icon">
+              <i class="fa-brands fa-html5"></i>
             </div>
+            <h2 class="major__title">Front-end</h2>
+            <p class="major__description">
+              HTML&#44; CSS&#44; JavaScript&#44; Vue&#44; Web APIs
+            </p>
           </div>
-          <div class="education">
-            <!-- Temporary Iamge -->
-            <img
-              class="education__icon"
-              src="/images/educations/대구영남고등학교교표.png"
-              alt="Chuo University Mark"
-            />
-            <div class="education__details">
-              <h3 class="education__title">Chuo University&#44; Japan</h3>
-              <p class="education__description">April 2017 &#45; March 2024</p>
+          <div class="major">
+            <div class="major__icon">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h2 class="major__title">Back-end</h2>
+            <p class="major__description">
+              JavaScript&#44; Node.js&#44; MongoDB&#44; Mongoose
+            </p>
+          </div>
+        </div>
+        <div class="about__education">
+          <div class="educations">
+            <div class="education">
+              <img
+                class="education__icon"
+                src="/images/educations/대구영남고등학교교표.png"
+                alt="Daegu Yeongnam High School Mark"
+              />
+              <div class="education__details">
+                <h3 class="education__title">
+                  Yeongnam High School&#44; Republic of Korea
+                </h3>
+                <p class="education__description">
+                  March 2014 &#45; February 2017
+                </p>
+              </div>
+            </div>
+            <div class="education">
+              <!-- Temporary Iamge -->
+              <img
+                class="education__icon"
+                src="/images/educations/대구영남고등학교교표.png"
+                alt="Chuo University Mark"
+              />
+              <div class="education__details">
+                <h3 class="education__title">Chuo University&#44; Japan</h3>
+                <p class="education__description">
+                  April 2017 &#45; March 2024
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -127,8 +132,8 @@
 
     <!-- Skills Section -->
     <section id="skills" class="section skills__section">
-      <h1 class="sr-only">Skills</h1>
-      <div class="skills">
+      <h1 class="sr-only">Skills Section</h1>
+      <div class="container">
         <h1>Skills</h1>
         <h2 class="description">Skills &amp; Attributes</h2>
         <p class="paragraph">
@@ -223,105 +228,115 @@
     </section>
 
     <!-- My Work Section -->
-    <section id="work" class="section work__section">
-      <h1>My Work</h1>
-      <h2 class="description">Projects</h2>
-      <div class="work__categories">
-        <button class="category__btn all">
-          All<span class="category__count">4</span>
-        </button>
-        <button class="category__btn front-end">
-          Front-end<span class="category__count">3</span>
-        </button>
-        <button class="category__btn back-end">
-          Back-end<span class="category__count">1</span>
-        </button>
-      </div>
-      <div class="work__projects">
-        <a
-          href="https://jhtube-reloaded.herokuapp.com/"
-          class="project"
-          target="_blank"
-        >
-          <img
-            src="images/projects/jhtube.png"
-            alt="jhtube"
-            class="project__img"
-          />
-          <div class="project__description">
-            <h3>JHTube</h3>
-            <span>Clone youtube with JavaScript, SCSS, and Node.js</span>
-          </div>
-        </a>
-        <a
-          href="https://hobbychat-fd9e4.web.app/"
-          class="project"
-          target="_blank"
-        >
-          <img
-            src="images/projects/hobby-chat.png"
-            alt="hobby chat"
-            class="project__img"
-          />
-          <div class="project__description">
-            <h3>Hobby Chat</h3>
-            <span>Team project with Vue, Vuex, Vue router, and Firebase</span>
-          </div>
-        </a>
-        <a
-          href="https://brillar2225.github.io/"
-          class="project"
-          target="_blank"
-        >
-          <img
-            src="images/projects/clone-chrome.png"
-            alt="clone chrome"
-            class="project__img"
-          />
-          <div class="project__description">
-            <h3>Clone Chrome</h3>
-            <span>Clone coding with HTML, CSS, and JavaScript</span>
-          </div>
-        </a>
+    <section id="work" class="section">
+      <h1 class="sr-only">Work Section</h1>
+      <div class="container work__container">
+        <h1>My Work</h1>
+        <h2 class="description">Projects</h2>
+        <div class="work__categories">
+          <button class="category__btn all">
+            All<span class="category__count">4</span>
+          </button>
+          <button class="category__btn front-end">
+            Front-end<span class="category__count">3</span>
+          </button>
+          <button class="category__btn back-end">
+            Back-end<span class="category__count">1</span>
+          </button>
+        </div>
+        <div class="work__projects">
+          <a
+            href="https://jhtube-reloaded.herokuapp.com/"
+            class="project"
+            target="_blank"
+          >
+            <img
+              src="images/projects/jhtube.png"
+              alt="jhtube"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>JHTube</h3>
+              <span>Clone youtube with JavaScript, SCSS, and Node.js</span>
+            </div>
+          </a>
+          <a
+            href="https://hobbychat-fd9e4.web.app/"
+            class="project"
+            target="_blank"
+          >
+            <img
+              src="images/projects/hobby-chat.png"
+              alt="hobby chat"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Hobby Chat</h3>
+              <span>Team project with Vue, Vuex, Vue router, and Firebase</span>
+            </div>
+          </a>
+          <a
+            href="https://brillar2225.github.io/"
+            class="project"
+            target="_blank"
+          >
+            <img
+              src="images/projects/clone-chrome.png"
+              alt="clone chrome"
+              class="project__img"
+            />
+            <div class="project__description">
+              <h3>Clone Chrome</h3>
+              <span>Clone coding with HTML, CSS, and JavaScript</span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Testimonial Section -->
     <section id="testimonial" class="section testimonial__section">
-      <h1>Testimonial</h1>
-      <h3 class="description">See what they say about me</h3>
-      <div class="testimonials">
-        <div class="testimonial">
-          <img
-            src="/images/testimonials/people-img.jpg"
-            alt="people"
-            class="testimonial__avatar"
-          />
-          <div class="testimonial__speech-bubble">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-              eos possimus libero ratione dolor, quidem quisquam impedit minus
-              dicta sed aspernatur fuga tempore nesciunt officiis earum rerum
-              molestias vel tenetur.
-            </p>
-            <p class="testimonial__name"><a href="">Ellie</a> &#47; Samsung</p>
+      <h1 class="sr-only">Testimonial Section</h1>
+      <div class="container">
+        <h1>Testimonial</h1>
+        <h3 class="description">See what they say about me</h3>
+        <div class="testimonials">
+          <div class="testimonial">
+            <img
+              src="/images/testimonials/people-img.jpg"
+              alt="people"
+              class="testimonial__avatar"
+            />
+            <div class="testimonial__speech-bubble">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aperiam eos possimus libero ratione dolor, quidem quisquam
+                impedit minus dicta sed aspernatur fuga tempore nesciunt
+                officiis earum rerum molestias vel tenetur.
+              </p>
+              <p class="testimonial__name">
+                <a href="">Ellie</a> &#47; Samsung
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial__speech-bubble">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-              eos possimus libero ratione dolor, quidem quisquam impedit minus
-              dicta sed aspernatur fuga tempore nesciunt officiis earum rerum
-              molestias vel tenetur.
-            </p>
-            <p class="testimonial__name"><a href="">Ellie</a> &#47; Samsung</p>
+          <div class="testimonial">
+            <div class="testimonial__speech-bubble">
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Aperiam eos possimus libero ratione dolor, quidem quisquam
+                impedit minus dicta sed aspernatur fuga tempore nesciunt
+                officiis earum rerum molestias vel tenetur.
+              </p>
+              <p class="testimonial__name">
+                <a href="">Ellie</a> &#47; Samsung
+              </p>
+            </div>
+            <img
+              src="/images/testimonials/people-img.jpg"
+              alt="people"
+              class="testimonial__avatar"
+            />
           </div>
-          <img
-            src="/images/testimonials/people-img.jpg"
-            alt="people"
-            class="testimonial__avatar"
-          />
         </div>
       </div>
     </section>
