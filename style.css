@@ -21,12 +21,24 @@
   --fs-small: 16px;
   --fs-extra-small: 14px;
 
+  --mfs-large: 30px;
+  --mfs-medium: 21px;
+  --mfs-regular: 16px;
+  --mfs-small: 14px;
+  --mfs-extra-small: 11px;
+
   /* Line Height */
   --lh-large: 1.0434782609;
   --lh-medium: 1.0769230769;
   --lh-regular: 1.125;
   --lh-small: 1.1428571429;
   --lh-extra-small: 1.1666666667;
+
+  --mlh-large: 1.0714285714;
+  --mlh-medium: 1.1052631579;
+  --mlh-regular: 1.1428571429;
+  --mlh-small: 1.1666666667;
+  --mlh-extra-small: 1.2222222222;
 
   /* Font Weight */
   --fw-bold: 700;
@@ -639,10 +651,46 @@ footer h5 {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  /* Global */
+  h1 {
+    font-size: var(--mfs-large);
+    line-height: var(--mlh-large);
+  }
+
+  h2 {
+    font-size: var(--mfs-medium);
+    line-height: var(--mlh-medium);
+  }
+
+  h3 {
+    font-size: var(--mfs-regular);
+    line-height: var(--mlh-regular);
+  }
+
+  h4,
+  h5 {
+    font-size: var(--mfs-small);
+    line-height: var(--mlh-small);
+  }
+
+  p {
+    font-size: var(--mfs-extra-small);
+    line-height: var(--mlh-extra-small);
+  }
+
+  .section {
+    padding: 30px;
+  }
+
   /* Header */
   .header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .home__avatar {
+    width: 200px;
+    height: 200px;
   }
 
   .header__navbar {
@@ -656,5 +704,71 @@ footer h5 {
 
   .header__menubar-btn {
     display: block;
+  }
+
+  /* Home Section */
+  .home__button {
+    margin-top: 20px;
+  }
+
+  /* About Section */
+  .about__majors {
+    flex-direction: column;
+    margin: 20px 0;
+  }
+
+  .major {
+    margin: 20px 0;
+  }
+
+  .education {
+    flex-direction: column;
+  }
+
+  .education__icon {
+    margin: 0;
+  }
+
+  .education__details {
+    align-items: center;
+  }
+
+  /* Skills Section */
+  .skillset {
+    flex-direction: column;
+  }
+
+  /* Work Section */
+  .work__categories {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .category__btn {
+    margin: 3px 0;
+    width: 200px;
+  }
+
+  .work__projects {
+    flex-direction: column;
+  }
+
+  /* Testimonial Section */
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonials {
+    margin: 0;
+  }
+
+  .testimonial__avatar:nth-child(odd) {
+    margin-right: 15px;
+  }
+
+  .testimonial__avatar:nth-child(even) {
+    margin-left: 15px;
   }
 }
