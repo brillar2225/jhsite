@@ -7,7 +7,12 @@
     <title>JH Portfolio</title>
     <meta name="description" content="Portfolio site of JH" />
     <meta name="author" content="Jaehee" />
-    <link rel="icon" type="image/png" sizes="144x144" href="images/logo.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/jhcom-black.png"
+    />
     <script
       src="https://kit.fontawesome.com/d37083536e.js"
       crossorigin="anonymous"
@@ -17,33 +22,32 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="main.js" defer></script>
   </head>
   <body>
     <!-- Header -->
     <header id="header" class="header">
       <a href="#" class="header__logo">
-        <img src="/images/jhcom.png" alt="JHSite logo" />
+        <img src="/images/jhcom-white.png" alt="JHSite logo" />
       </a>
       <nav class="header__navbar">
-        <ul class="header__ul">
+        <ul id="navbar" class="header__ul">
           <li class="header__li">
             <a class="header__li__a active" href="#">Home</a>
           </li>
           <li class="header__li">
-            <a class="header__li__a" href="">About</a>
+            <a class="header__li__a" href="#about">About</a>
           </li>
           <li class="header__li">
-            <a class="header__li__a" href="">Skills</a>
+            <a class="header__li__a" href="#skills">Skills</a>
           </li>
           <li class="header__li">
-            <a class="header__li__a" href="">My Work</a>
+            <a class="header__li__a" href="#work">My Work</a>
           </li>
           <li class="header__li">
-            <a class="header__li__a" href="">Testimonial</a>
+            <a class="header__li__a" href="#testimonial">Testimonial</a>
           </li>
           <li class="header__li">
-            <a class="header__li__a" href="">Contact</a>
+            <a class="header__li__a" href="#contact">Contact</a>
           </li>
           <li class="header__li">
             <i class="fa-solid fa-circle-half-stroke"></i>
@@ -70,7 +74,9 @@
           A Software Engineer who wants to provide experiences make user happy
           in Tokyo&#44; Japan
         </h2>
-        <button class="home__button">Contact Me</button>
+        <button class="home__button">
+          <a href="#contact">Contact Me</a>
+        </button>
       </div>
     </section>
 
@@ -368,5 +374,6 @@
       <h4>&copy; 2022 JHSite Jaehee Chung</h4>
       <h5>All rights reserved</h5>
     </footer>
+    <script src="main.js" defer></script>
   </body>
 </html>
