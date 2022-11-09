@@ -2,7 +2,6 @@
 
 const header = document.querySelector('#header');
 const homeContainer = document.querySelector('#homeContainer');
-const about = document.querySelector('#about');
 const arrowUpBtn = document.querySelector('#arrowUpBtn');
 
 const handleScroll = () => {
@@ -26,17 +25,15 @@ const handleScroll = () => {
   homeContainer.style.opacity = opacity;
 
   // Arrow Up Event
-  const homeContainerBottom = homeContainer.getBoundingClientRect().bottom;
-  const aboutHeight = about.getBoundingClientRect().height;
-  opacity = scrollY / aboutHeight;
-
-  arrowUpBtn.style.opacity = opacity;
+  opacity = scrollY / homeContainerHeight;
 
   if (scrollY > homeContainerHeight / 2) {
     arrowUpBtn.classList.add('visible');
   } else {
     arrowUpBtn.classList.remove('visible');
   }
+
+  arrowUpBtn.style.opacity = opacity;
 };
 
 document.addEventListener('scroll', handleScroll);
