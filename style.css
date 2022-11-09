@@ -13,6 +13,7 @@
   --color-dark-gray: #909090;
   --color-light-gray: #cfcfcf;
   --color-princeton-orange: #ff8f00;
+  --color-purple: #b39ddb;
 
   /* Font Size */
   --fs-large: 48px;
@@ -656,6 +657,29 @@ li {
 
 .contact__social i:hover {
   transform: scale(1.2);
+}
+
+/* Arrow-up Button */
+.arrow-up {
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  font-size: 30px;
+  color: var(--color-white);
+  border-radius: var(--br-round);
+  background-color: var(--color-purple);
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--ad-normal) linear;
+}
+
+.arrow-up.visible {
+  pointer-events: auto;
+}
+
+.fa-solid.fa-arrow-up {
+  padding: 4px 13px;
+  line-height: 40px;
 }
 
 /* Footer */
