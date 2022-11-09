@@ -273,6 +273,7 @@ li {
   align-items: center;
   max-width: 1024px;
   text-align: center;
+  transition: opacity var(--ad-short) ease-in-out;
 }
 
 .home__avatar {
