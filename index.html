@@ -249,22 +249,23 @@
       <div class="container work__container">
         <h1>My Work</h1>
         <h2 class="description">Projects</h2>
-        <div class="work__categories">
-          <button class="category__btn all">
+        <div id="categoryBtnContainer" class="work__categories">
+          <button class="category__btn all" data-filter="*">
             All<span class="category__count">4</span>
           </button>
-          <button class="category__btn front-end">
+          <button class="category__btn front-end" data-filter="front-end">
             Front-end<span class="category__count">3</span>
           </button>
-          <button class="category__btn back-end">
+          <button class="category__btn back-end" data-filter="back-end">
             Back-end<span class="category__count">1</span>
           </button>
         </div>
-        <div class="work__projects">
+        <div id="projectContainer" class="work__projects">
           <a
             href="https://jhtube-reloaded.herokuapp.com/"
             class="project"
             target="_blank"
+            data-type="back-end"
           >
             <img
               src="images/projects/jhtube.png"
@@ -280,6 +281,7 @@
             href="https://hobbychat-fd9e4.web.app/"
             class="project"
             target="_blank"
+            data-type="front-end"
           >
             <img
               src="images/projects/hobby-chat.png"
@@ -295,6 +297,7 @@
             href="https://brillar2225.github.io/"
             class="project"
             target="_blank"
+            data-type="front-end"
           >
             <img
               src="images/projects/clone-chrome.png"

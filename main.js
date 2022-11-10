@@ -3,6 +3,9 @@
 const header = document.querySelector('#header');
 const homeContainer = document.querySelector('#homeContainer');
 const arrowUpBtn = document.querySelector('#arrowUpBtn');
+const categoryBtns = document.querySelector('#categoryBtnContainer');
+const projects = document.querySelector('#projectContainer');
+const project = document.querySelectorAll('.project');
 
 const handleScroll = () => {
   const scrollY = window.scrollY;
@@ -36,4 +39,26 @@ const handleScroll = () => {
   arrowUpBtn.style.opacity = opacity;
 };
 
+const handleWorkFilter = (event) => {
+  const filter =
+    event.target.dataset.filter || event.target.parentNode.dataset.filter;
+
+  if (filter === null || undefined) {
+    return;
+  }
+
+  projects.classList.add('animation-out');
+  setTimeout(() => {
+    project.forEach((i) => {
+      if (filter === '*' || filter === i.dataset.type) {
+        i.classList.remove('invisible');
+      } else {
+        i.classList.add('invisible');
+      }
+    });
+    projects.classList.remove('animation-out');
+  }, 300);
+};
+
 document.addEventListener('scroll', handleScroll);
+categoryBtns.addEventListener('click', handleWorkFilter);
