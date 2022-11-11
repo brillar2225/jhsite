@@ -1,16 +1,72 @@
 'use strict';
 
+// Variables
 const header = document.querySelector('#header');
+const navbar = document.querySelector('#navbar');
 const homeContainer = document.querySelector('#homeContainer');
 const arrowUpBtn = document.querySelector('#arrowUpBtn');
-const categoryBtns = document.querySelector('#categoryBtnContainer');
+const categories = document.querySelector('#categoryContainer');
 const projects = document.querySelector('#projectContainer');
 const project = document.querySelectorAll('.project');
 
+let opacity;
+let preTarget = null;
+let preButton = null;
+let preChildButton = null;
+
+// Global Func
+const activateStatus = (event) => {
+  const target = event.target;
+
+  switch (target.nodeName) {
+    case 'A':
+      target.classList.add('active');
+
+      if (preTarget !== null) {
+        preTarget.classList.remove('active');
+      }
+
+      preTarget = target;
+      break;
+
+    case 'BUTTON':
+      const targetChild = event.target.querySelector('.category__count');
+
+      target.classList.add('active');
+      targetChild.classList.add('active');
+
+      if (preButton !== null) {
+        preButton.classList.remove('active');
+        preChildButton.classList.remove('active');
+      }
+
+      preButton = target;
+      preChildButton = targetChild;
+      break;
+
+    case 'SPAN':
+      const targetParent = event.target.parentNode;
+
+      targetParent.classList.add('active');
+      target.classList.add('active');
+
+      if (preButton !== null) {
+        preButton.classList.remove('active');
+        preChildButton.classList.remove('active');
+      }
+
+      preButton = target;
+      preChildButton = targetParent;
+      break;
+
+    default:
+      break;
+  }
+};
+
+// Scroll Events on header, home, and arrow up button
 const handleScroll = () => {
   const scrollY = window.scrollY;
-
-  let opacity;
 
   // Header Scroll Event
   const headerHeight = header.getBoundingClientRect().height;
@@ -23,6 +79,7 @@ const handleScroll = () => {
 
   // Home Scroll Event
   const homeContainerHeight = homeContainer.getBoundingClientRect().height;
+
   opacity = 1 - scrollY / homeContainerHeight; // = (homeContainerHeight - scrollY) / homeContainerHeight
 
   homeContainer.style.opacity = opacity;
@@ -35,11 +92,13 @@ const handleScroll = () => {
   } else {
     arrowUpBtn.classList.remove('visible');
   }
-
   arrowUpBtn.style.opacity = opacity;
 };
 
-const handleWorkFilter = (event) => {
+// Activate status of button and filter projects in given condition
+const handleWorks = (event) => {
+  activateStatus(event);
+
   const filter =
     event.target.dataset.filter || event.target.parentNode.dataset.filter;
 
@@ -60,5 +119,7 @@ const handleWorkFilter = (event) => {
   }, 300);
 };
 
+// EventListeners
 document.addEventListener('scroll', handleScroll);
-categoryBtns.addEventListener('click', handleWorkFilter);
+navbar.addEventListener('click', activateStatus);
+categories.addEventListener('click', handleWorks);
