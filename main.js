@@ -3,6 +3,7 @@
 // Variables
 const header = document.querySelector('#header');
 const navbar = document.querySelector('#navbar');
+const menubarBtn = document.querySelector('#menubarBtn');
 const lists = document.querySelectorAll('.header__li');
 const sections = document.querySelectorAll('section');
 const homeContainer = document.querySelector('#homeContainer');
@@ -18,10 +19,15 @@ const activateList = (li) => {
   li.classList.add('active');
 };
 
+// Handle menubar button on mobile screen
+const handleMenu = () => {
+  navbar.classList.toggle('active');
+};
+
 // Scroll Events on header, home, and arrow up button
 const handleScroll = () => {
   const scrollY = window.scrollY;
-  console.log(scrollY);
+
   // Active navbar with scroll event
   sections.forEach((section) => {
     const top = section.offsetTop;
@@ -32,13 +38,6 @@ const handleScroll = () => {
     if (scrollY >= top - 200 && scrollY < top + height) {
       const target = document.querySelector(`[href='#${id}']`).parentElement;
       activateList(target);
-    }
-
-    if (scrollY >= 3000) {
-      const contactList = document.querySelector(
-        '.header__li [href="#contact"]'
-      ).parentElement;
-      activateList(contactList);
     }
   });
 
@@ -133,6 +132,7 @@ const handleWorks = (event) => {
 
 // EventListeners
 document.addEventListener('scroll', handleScroll);
+menubarBtn.addEventListener('click', handleMenu);
 lists.forEach((list) => {
   list.addEventListener('click', function () {
     activateList(this);

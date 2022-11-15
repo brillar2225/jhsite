@@ -767,6 +767,10 @@ footer h5 {
     width: 100%;
   }
 
+  .header__navbar.active {
+    display: block;
+  }
+
   .header__ul {
     flex-direction: column;
   }
