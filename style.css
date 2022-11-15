@@ -217,6 +217,10 @@ li {
   align-items: center;
 }
 
+.header__li.active {
+  color: var(--color-dark-gray);
+}
+
 .header__li__a {
   position: relative;
   padding: 12px 14px;
@@ -239,10 +243,6 @@ li {
 
 .header__li__a:hover::after {
   width: 100%;
-}
-
-.header__li__a.active {
-  color: var(--color-dark-gray);
 }
 
 .fa-solid.fa-circle-half-stroke {

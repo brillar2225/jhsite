@@ -3,70 +3,44 @@
 // Variables
 const header = document.querySelector('#header');
 const navbar = document.querySelector('#navbar');
+const lists = document.querySelectorAll('.header__li');
+const sections = document.querySelectorAll('section');
 const homeContainer = document.querySelector('#homeContainer');
-const arrowUpBtn = document.querySelector('#arrowUpBtn');
 const categories = document.querySelector('#categoryContainer');
-const projects = document.querySelector('#projectContainer');
-const project = document.querySelectorAll('.project');
 
 let opacity;
-let preTarget = null;
-let preButton = null;
-let preChildButton = null;
 
 // Global Func
-const activateStatus = (event) => {
-  const target = event.target;
-
-  switch (target.nodeName) {
-    case 'A':
-      target.classList.add('active');
-
-      if (preTarget !== null) {
-        preTarget.classList.remove('active');
-      }
-
-      preTarget = target;
-      break;
-
-    case 'BUTTON':
-      const targetChild = event.target.querySelector('.category__count');
-
-      target.classList.add('active');
-      targetChild.classList.add('active');
-
-      if (preButton !== null) {
-        preButton.classList.remove('active');
-        preChildButton.classList.remove('active');
-      }
-
-      preButton = target;
-      preChildButton = targetChild;
-      break;
-
-    case 'SPAN':
-      const targetParent = event.target.parentNode;
-
-      targetParent.classList.add('active');
-      target.classList.add('active');
-
-      if (preButton !== null) {
-        preButton.classList.remove('active');
-        preChildButton.classList.remove('active');
-      }
-
-      preButton = target;
-      preChildButton = targetParent;
-      break;
-
-    default:
-      break;
-  }
+const activateList = (li) => {
+  lists.forEach((list) => {
+    list.classList.remove('active');
+  });
+  li.classList.add('active');
 };
 
 // Scroll Events on header, home, and arrow up button
 const handleScroll = () => {
   const scrollY = window.scrollY;
+  console.log(scrollY);
+  // Active navbar with scroll event
+  sections.forEach((section) => {
+    const top = section.offsetTop;
+    const height = section.offsetHeight;
+    const id = section.getAttribute('id');
+
+    // condition : top and bottom of each section
+    if (scrollY >= top - 200 && scrollY < top + height) {
+      const target = document.querySelector(`[href='#${id}']`).parentElement;
+      activateList(target);
+    }
+
+    if (scrollY >= 3000) {
+      const contactList = document.querySelector(
+        '.header__li [href="#contact"]'
+      ).parentElement;
+      activateList(contactList);
+    }
+  });
 
   // Header Scroll Event
   const headerHeight = header.getBoundingClientRect().height;
@@ -85,6 +59,7 @@ const handleScroll = () => {
   homeContainer.style.opacity = opacity;
 
   // Arrow Up Event
+  const arrowUpBtn = document.querySelector('#arrowUpBtn');
   opacity = scrollY / homeContainerHeight;
 
   if (scrollY > homeContainerHeight / 2) {
@@ -95,14 +70,51 @@ const handleScroll = () => {
   arrowUpBtn.style.opacity = opacity;
 };
 
-// Activate status of button and filter projects in given condition
 const handleWorks = (event) => {
-  activateStatus(event);
+  // Activate button status when it is clicked
+  const target = event.target;
+  const activedBtn = document.querySelector('.category__btn.active');
+  const activedCount = document.querySelector('.category__count.active');
 
+  let parentTarget;
+  let childTarget;
+
+  switch (target.nodeName) {
+    case 'BUTTON':
+      parentTarget = target;
+      childTarget = target.querySelector('.category__count');
+
+      if (activedBtn && activedCount) {
+        activedBtn.classList.remove('active');
+        activedCount.classList.remove('active');
+      }
+      parentTarget.classList.add('active');
+      childTarget.classList.add('active');
+      break;
+
+    case 'SPAN':
+      parentTarget = target.parentNode;
+      childTarget = target;
+
+      if (activedBtn && activedCount) {
+        activedBtn.classList.remove('active');
+        activedCount.classList.remove('active');
+      }
+      parentTarget.classList.add('active');
+      childTarget.classList.add('active');
+      break;
+
+    default:
+      break;
+  }
+
+  // Filter projects in given condition
+  const projects = document.querySelector('#projectContainer');
+  const project = document.querySelectorAll('.project');
   const filter =
     event.target.dataset.filter || event.target.parentNode.dataset.filter;
 
-  if (filter === null || undefined) {
+  if (filter === undefined) {
     return;
   }
 
@@ -121,5 +133,9 @@ const handleWorks = (event) => {
 
 // EventListeners
 document.addEventListener('scroll', handleScroll);
-navbar.addEventListener('click', activateStatus);
+lists.forEach((list) => {
+  list.addEventListener('click', function () {
+    activateList(this);
+  });
+});
 categories.addEventListener('click', handleWorks);
