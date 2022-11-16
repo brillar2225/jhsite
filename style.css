@@ -186,7 +186,7 @@ li {
   z-index: 1;
 }
 
-.fixed {
+.header.fixed {
   background-color: #ced8eb;
 }
 
@@ -757,6 +757,11 @@ footer h5 {
     align-items: flex-start;
   }
 
+  .header.active {
+    background-color: #ced8eb;
+    opacity: 0.94;
+  }
+
   .home__avatar {
     width: 200px;
     height: 200px;
@@ -773,6 +778,11 @@ footer h5 {
 
   .header__ul {
     flex-direction: column;
+  }
+
+  .header__li {
+    justify-content: flex-end;
+    width: 100%;
   }
 
   .header__menubar-btn {

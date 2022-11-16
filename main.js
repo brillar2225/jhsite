@@ -21,6 +21,7 @@ const activateList = (li) => {
 
 // Handle menubar button on mobile screen
 const handleMenu = () => {
+  header.classList.toggle('active');
   navbar.classList.toggle('active');
 };
 
@@ -40,6 +41,17 @@ const handleScroll = () => {
       activateList(target);
     }
   });
+
+  const contactTop = sections[4].offsetTop;
+  const contactHeight = sections[4].offsetHeight;
+
+  // condition for the active contact button
+  if (scrollY >= contactTop + contactHeight / 2) {
+    const contactList = document.querySelector(
+      '.header__li [href="#contact"]'
+    ).parentElement;
+    activateList(contactList);
+  }
 
   // Header Scroll Event
   const headerHeight = header.getBoundingClientRect().height;
