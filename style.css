@@ -587,14 +587,18 @@ li {
   transition: all var(--ad-short) ease-in-out;
 }
 
+.project__description h3 {
+  color: var(--color-princeton-orange);
+}
+
 .project__description h3::after {
   content: '';
   display: block;
   position: relative;
-  left: 50%;
+  left: 40%;
   margin-top: 8px;
   margin-left: -20px;
-  width: 40px;
+  width: 90px;
   height: 2px;
   background-color: var(--color-dark-white);
 }
