@@ -36,7 +36,7 @@ const handleScroll = () => {
     const id = section.getAttribute('id');
 
     // condition : top and bottom of each section
-    if (scrollY >= top - 200 && scrollY < height + top) {
+    if (scrollY >= top - 100 && scrollY < height + top) {
       const target = document.querySelector(`[href='#${id}']`).parentElement;
       activateList(target);
     }
