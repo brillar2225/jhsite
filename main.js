@@ -36,17 +36,14 @@ const handleScroll = () => {
     const id = section.getAttribute('id');
 
     // condition : top and bottom of each section
-    if (scrollY >= top - 200 && scrollY < top + height) {
+    if (scrollY >= top - 200 && scrollY < height + top) {
       const target = document.querySelector(`[href='#${id}']`).parentElement;
       activateList(target);
     }
   });
 
-  const contactTop = sections[4].offsetTop;
-  const contactHeight = sections[4].offsetHeight;
-
   // condition for the active contact button
-  if (scrollY >= contactTop + contactHeight / 2) {
+  if (window.innerHeight + scrollY >= document.body.scrollHeight) {
     const contactList = document.querySelector(
       '.header__li [href="#contact"]'
     ).parentElement;
