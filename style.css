@@ -251,7 +251,7 @@ li {
 .home {
   display: flex;
   height: 100vh;
-  background: url(/images/background.png) center center no-repeat;
+  background: url(images/background.png) center center no-repeat;
   background-size: cover;
 }
 
